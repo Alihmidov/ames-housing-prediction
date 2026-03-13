@@ -1,0 +1,30 @@
+# Virtual environments
+venv/
+env/
+.env
+.venv/
+
+# Source control
+.git
+.gitignore
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Documentation and notebooks (Not needed for production API)
+notebooks/
+README.md
+LICENSE
+.github/
+
+# Docker related
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Local settings
+.vscode/
+.env.example
