@@ -7,3 +7,7 @@ sqlalchemy
 python-dotenv
 matplotlib
 seaborn
+xgboost
+lightgbm
+catboost
+joblib 
