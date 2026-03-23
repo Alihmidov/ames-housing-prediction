@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 class HouseInput(BaseModel):
     total_living_area: float
@@ -17,20 +17,14 @@ class HouseInput(BaseModel):
     lot_area: float
     garage_cond: float
     garage_area: float
-
-    # We use aliases here to match the specific column names used during model training
-    # This allows the API to accept lowercase but handle uppercase internally
-    central_air_n: str = Field(alias="central_air_N")
+    # IMPORTANT: These fields must remain uppercase to match the X_train columns
+    # and the feature importance list we generated during model training.
+    central_air_N: str  
     bsmt_fin_sf_1: float
     heating_qc: float
-    central_air_y: str = Field(alias="central_air_Y")
-
-    class Config:
-        # This setting allows the model to be populated using both the field names and aliases
-        populate_by_name = True
+    central_air_Y: str
 
 class PredictionOutput(BaseModel):
-    # Standard output format for the price prediction
     estimated_price: float
     currency: str = "USD"
     message: str = "Prediction successful"
