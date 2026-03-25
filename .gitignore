@@ -39,9 +39,6 @@ Thumbs.db
 # Docker
 .docker/
 
-# Data files
-data/raw/*.csv
-
 # CatBoost temporary files
 **/catboost_info/
 catboost_info/
