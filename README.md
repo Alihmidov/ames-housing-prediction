@@ -1,5 +1,11 @@
 Ames Housing Price Prediction Project
 
+## 🔗 Quick Links
+* **🚀 Live API Demo:** [https://ames-housing-prediction.onrender.com/docs](https://ames-housing-prediction.onrender.com/docs)
+* **💻 Project Repository:** [https://github.com/Alihmidov/ames-housing-prediction](https://github.com/Alihmidov/ames-housing-prediction)
+* **👤 GitHub Profile:** [https://github.com/Alihmidov](https://github.com/Alihmidov)
+
+
 This project predicts house prices in Ames, Iowa, using regression models. I created a full pipeline that includes data cleaning and processing. Finally, I deployed the model using a FastAPI interface so it can provide real-time predictions.
 
 
@@ -13,6 +19,7 @@ models/: After training, I saved my model and preprocessor here as .joblib files
 notebooks/: This is my "laboratory". I have 6 different notebooks for EDA, cleaning, and training.
 sql/: I used some SQL to clean the initial data.
 Dockerfile: To run this project easily anywhere using Docker.
+
 
 
 How I Built It (The Workflow)
@@ -97,51 +104,63 @@ Response body
   "currency": "USD"
 }
 
+Live Demo & Deployment
 
-6.System Architecture
+The project is fully containerized and deployed on the Render cloud platform. This allows users to interact with the model in real-time without any local setup.
+Access Live API (Swagger UI)
 
-The project follows a modular architecture to ensure scalability and separation of concerns:
+How to perform a live test:
 
-Data Layer: Raw CSV data is ingested, cleaned, and stored in a PostgreSQL container.
-Processing Layer: Feature engineering and model training are performed via Jupyter Notebooks, pulling data directly from SQL.
-Model Layer: The trained CatBoost model and feature importance list are serialized using joblib.
-Service Layer: A FastAPI application loads the model and serves a /predict endpoint.
-Deployment: The entire stack is containerized using Docker and Docker Compose.
+    Click the link above to open the API documentation.
+
+    Locate the POST /predict endpoint.
+
+    Click "Try it out".
+
+    Use the default JSON values and click "Execute".
+
+    Check the "Server Response" to see the predicted house price!
+
+Infrastructure & Security
+
+This project demonstrates a production-grade machine learning lifecycle:
+
+    Database: A managed PostgreSQL instance on Render stores the cleaned dataset.
+
+    Containerization: The application is packaged using Docker, ensuring consistency between development and production.
+
+    CI/CD: Automated builds are triggered on every push to the main branch.
+
+    Security: The database is protected with Inbound IP Restrictions, allowing only the internal API service to connect.
 
 
-7.Tech Stack
-
-Language: Python 3.12
-Database: PostgreSQL 15
-API Framework: FastAPI (Pydantic for validation)
-ML Libraries: Scikit-learn, CatBoost, Pandas, NumPy
-Containerization: Docker & Docker Compose
-Environment: .env for secure credential management
 
 
-8.How to Run
+If you want to run the project locally on your machine, follow these steps:
 
-Using Docker (The Easiest Way)
+### Using Docker (Recommended)
+1. **Build the image:**
+   ```bash
+   docker build -t ames-housing-app .
 
-Build the image:
-Bash
+    Run the container:
+    Bash
 
-docker build -t ames-housing-app .
+    docker run -p 10000:10000 ames-housing-app
 
-Run the container:
-Bash
+    Access the API: Once the container is running, open your browser at http://localhost:10000/docs.
 
-docker run -p 10000:10000 ames-housing-app
-Go to http://localhost:10000/docs in your browser to test it!
-
-Manual Way
-
-If you don't have Docker, just install the requirements:
+Manual Installation
 Bash
 
 pip install -r requirements.txt
 uvicorn app.main:app --host 0.0.0.0 --port 10000
 
+Conclusion
+
+This project transitions from a simple Jupyter Notebook exploration to a fully integrated End-to-End Machine Learning System. By focusing on model generalization (CatBoost) and robust deployment (Docker/FastAPI), it provides a scalable and secure solution for real estate valuation.
+
+Contact: GitHub Profile | Project Repository
 9.Contact
 
 If you have questions, check my GitHub: https://github.com/Alihmidov
