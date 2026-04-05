@@ -1,9 +1,11 @@
 Ames Housing Price Prediction Project
 
-## 🔗 Quick Links
-* **🚀 Live API Demo:** [https://ames-housing-prediction.onrender.com/docs](https://ames-housing-prediction.onrender.com/docs)
-* **💻 Project Repository:** [https://github.com/Alihmidov/ames-housing-prediction](https://github.com/Alihmidov/ames-housing-prediction)
-* **👤 GitHub Profile:** [https://github.com/Alihmidov](https://github.com/Alihmidov)
+## Quick Links
+Live API Demo:** [https://ames-housing-prediction.onrender.com/docs](https://ames-housing-prediction.onrender.com/docs)
+
+Project Repository:** [https://github.com/Alihmidov/ames-housing-prediction](https://github.com/Alihmidov/ames-housing-prediction)
+
+GitHub Profile:** [https://github.com/Alihmidov](https://github.com/Alihmidov)
 
 
 This project predicts house prices in Ames, Iowa, using regression models. I created a full pipeline that includes data cleaning and processing. Finally, I deployed the model using a FastAPI interface so it can provide real-time predictions.
@@ -135,10 +137,9 @@ This project demonstrates a production-grade machine learning lifecycle:
 
 
 
-
 If you want to run the project locally on your machine, follow these steps:
 
-### Using Docker (Recommended)
+### Using Docker 
 1. **Build the image:**
    ```bash
    docker build -t ames-housing-app .
